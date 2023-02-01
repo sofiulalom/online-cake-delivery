@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
+import useTitle from '../../../Title/useTitle';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const SignUp = () => {
      const {userSignUp}=useContext(AuthContext);
      const [error, setError]=useState(true)
+     useTitle('sign-Up')
       const handleSignUpSubmit=event=>{
         event.preventDefault();
         const form=event.target;
