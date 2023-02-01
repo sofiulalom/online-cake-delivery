@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import useTitle from '../../../Title/useTitle';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
+import GoogleLogin from '../googleLogin/GoogleLogin';
 
 const SignIn = () => {
     const {Login}=useContext(AuthContext);
@@ -33,6 +34,7 @@ const SignIn = () => {
         <input name='password' type="password" placeholder="Your Password" className="input  input-info w-full max-w-xs mb-3" required />
         <br />
         <input className='btn btn-primary w-full max-w-xs  mb-2' type="submit" value="Sign-In" />
+        <GoogleLogin></GoogleLogin>
         <small className='text-red-600 '>
             {error}
         </small>
