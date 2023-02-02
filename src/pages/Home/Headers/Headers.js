@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import {Link} from 'react-router-dom'
+import logo from  '../../../../src/assest/Logo/logo.jpg'
 const Headers = () => {
    const {user, LogOut}=useContext(AuthContext);
    const handleLogOutbtn=()=> {
@@ -40,16 +41,16 @@ const Headers = () => {
        {menuItems}
       </ul>
     </div>
-    <Link to='/' className="btn btn-ghost normal-case text-xl">daisyUI</Link>
+    <Link to='/' className="btn btn-ghost ml-8  pxy-0">
+      <img src={logo} alt="" className='w-14' />
+    </Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
     {menuItems}
     </ul>
   </div>
-  <div className="navbar-end">
-    <Link  to='/' className="btn">Get started</Link>
-  </div>
+ 
 </div>
     );
 };

@@ -6,13 +6,17 @@ const auth=getAuth(app)
 
 const AuthProvider = ({children}) => {
    const [user, setUser]=useState(null)
+   const [loading, setLoading]=useState(true);
    const googleProvider=(Provider)=>{
+      setLoading(true)
        return signInWithPopup(auth, Provider)
    }
    const userSignUp=(email, password)=>{
+      setLoading(true)
       return createUserWithEmailAndPassword(auth, email, password)
    }
    const Login=(email, password)=>{
+      setLoading(true)
       return signInWithEmailAndPassword(auth,email, password)
    }
    const LogOut=()=> {
@@ -21,13 +25,14 @@ const AuthProvider = ({children}) => {
    useEffect(()=> {
         const unSubsCribe= onAuthStateChanged(auth , (currentUser=> {
               console.log(currentUser)
-              setUser(currentUser)
+              setLoading(false)
+              setUser(currentUser);
          }) )
          return ()=>{
              unSubsCribe()
          }
    }, [])
-   const authInfo={user, userSignUp, Login, LogOut,googleProvider}
+   const authInfo={user, userSignUp, Login, LogOut,googleProvider, loading}
     return (
         <AuthContext.Provider value={authInfo}>
            {children}
