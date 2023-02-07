@@ -15,6 +15,7 @@ const Headers = () => {
        {user?.uid?
        <>
          <button onClick={handleLogOutbtn} className='btn btn-primary'>Loguot</button>
+         <li><Link to='/orders'>order</Link></li>
        </>
         
         :
@@ -31,7 +32,7 @@ const Headers = () => {
     
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 bg-white">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
