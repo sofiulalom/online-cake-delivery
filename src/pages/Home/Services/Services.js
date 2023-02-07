@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ServiceCart from './ServiceCart';
 
 const Services = () => {
+
     const [services, setServices]=useState();
     useEffect(()=> {
          fetch('http://localhost:5000/services')

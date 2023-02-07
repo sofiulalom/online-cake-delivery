@@ -52,7 +52,7 @@ const bannerData=[
       next: 1,
     },
 ];
-console.log(bannerData)
+
 const Banner = () => {
     return (
         <div className="carousel w-auto h-96 mx-5">
