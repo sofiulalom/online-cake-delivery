@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-const OrdersData = ({order,handleDelete}) => {
-    const {_id,servicename, phone, price ,customaraname,email, service }=order;
+const OrdersData = ({order,handleDelete,handleUpdateStatus}) => {
+    const {_id,servicename, phone, price ,customaraname,email, service,status }=order;
       const [oerderService, setOrderService]=useState({})
       useEffect(()=>{
              fetch(`http://localhost:5000/services/${service}`)
@@ -27,6 +27,7 @@ const OrdersData = ({order,handleDelete}) => {
              
             <div className="card-actions justify-end">
             <button onClick={()=> handleDelete(_id)} className="btn btn-primary">delete</button>
+            <button onClick={()=> handleUpdateStatus(_id)} className="btn btn-ghost">{status ? status :'panding'}</button>
             </div>
         </div>
         </div>
