@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 
-const OrdersData = ({order}) => {
-    const {servicename, phone, price ,customaraname,email, service }=order;
+const OrdersData = ({order,handleDelete}) => {
+    const {_id,servicename, phone, price ,customaraname,email, service }=order;
       const [oerderService, setOrderService]=useState({})
       useEffect(()=>{
              fetch(`http://localhost:5000/services/${service}`)
              .then(res => res.json())
              .then(data => setOrderService(data))
       },[service])
+    
+     
+
     return (
      <div className="card card-side w-full bg-base-100 shadow-xl ">
         <figure>
@@ -23,7 +26,7 @@ const OrdersData = ({order}) => {
             <p>Phone: {phone} </p>
              
             <div className="card-actions justify-end">
-            <button className="btn btn-primary">Watch</button>
+            <button onClick={()=> handleDelete(_id)} className="btn btn-primary">delete</button>
             </div>
         </div>
         </div>

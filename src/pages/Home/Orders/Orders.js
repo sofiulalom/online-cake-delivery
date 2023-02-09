@@ -10,6 +10,22 @@ const Orders = () => {
           .then(res => res.json())
           .then(data => setOrders(data))
     },[user?.email])
+
+    const handleDelete=id=>{
+          fetch(`http://localhost:5000/orders/${id}`, {
+            method:'DELETE',
+          })
+            .then(res =>  res.json())
+            .then(data => {
+                console.log(data);
+                if(data.deletedCount > 0){
+                    alert('you are sure orderd deleted')
+                    const remaning=orders.filter(ord => ord._id !== id);
+                    setOrders(remaning)
+                    
+                }
+            })
+    }
     return (
         <div>
             <h1>order data :{orders?.length} </h1>
@@ -18,6 +34,7 @@ const Orders = () => {
                     orders?.map(order => <OrdersData 
                         key={order._id}
                         order={order}
+                        handleDelete={handleDelete}
                         ></OrdersData>)
                 }
             </div>
