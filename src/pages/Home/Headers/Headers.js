@@ -12,7 +12,7 @@ const Headers = () => {
     const menuItems=<>
       
       <li><Link to='/'>Home</Link></li>
-       {user?.uid?
+       {user?.email?
        <>
          <li><Link to='/orders'>order</Link></li>
          <button onClick={handleLogOutbtn} className='btn btn-primary'>Loguot</button>

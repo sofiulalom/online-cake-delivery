@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import useTitle from '../../../Title/useTitle';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import GoogleLogin from '../googleLogin/GoogleLogin';
@@ -7,17 +8,21 @@ const SignIn = () => {
     const {Login}=useContext(AuthContext);
     const [error, setError]=useState()
     useTitle('sign-in')
+    const location=useLocation();
+    const navigate=useNavigate();
+    const from= location.state?.from?.pathname || '/';
     const handleSignInSubmit=event=>{
          event.preventDefault();
          const form=event.target;
          const email=form.email.value;
          const password=form.password.value;
-         console.log(email, password)
+         
          Login(email, password)
          .then(result=> {
             const user=result.user;
             console.log(user);
             form.reset()
+            navigate(from, {replace:true})
          })
          .catch(e => {
             console.error(e);
