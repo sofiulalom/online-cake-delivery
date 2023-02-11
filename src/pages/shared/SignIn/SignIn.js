@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { SetToken } from '../../../setToken/SetToken';
 import useTitle from '../../../Title/useTitle';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import GoogleLogin from '../googleLogin/GoogleLogin';
@@ -20,9 +21,11 @@ const SignIn = () => {
          Login(email, password)
          .then(result=> {
             const user=result.user;
-            console.log(user);
-            form.reset()
+            SetToken(user)
+             form.reset()
             navigate(from, {replace:true})
+            
+
          })
          .catch(e => {
             console.error(e);

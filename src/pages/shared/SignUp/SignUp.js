@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { SetToken } from '../../../setToken/SetToken';
 import useTitle from '../../../Title/useTitle';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import GoogleLogin from '../googleLogin/GoogleLogin';
@@ -17,7 +18,7 @@ const SignUp = () => {
         userSignUp(email, password)
         .then(result=> {
              const user=result.user;
-             console.log(user)
+             SetToken(user)
              form.reset()
         })
         .catch(e=> {
