@@ -17,9 +17,9 @@ const Headers = () => {
          <li><Link to='/orders'>order</Link></li>
          <button onClick={handleLogOutbtn} className='btn btn-primary'>Loguot</button>
           
-          <img src={user?.photoURL} alt="" className='w-10 ml-40 rounded-full ' />
+          <img src={user?.photoURL} alt="" className='w-10 ml-40 rounded-full '/>
           
-       </>
+       </> 
         
         :
        <>
