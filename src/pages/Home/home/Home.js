@@ -1,5 +1,6 @@
 import React from 'react';
 import useTitle from '../../../Title/useTitle';
+import SectionOne from '../../shared/section/SectionOne';
 import Banner from '../banner.js/Banner';
 
 import Services from '../Services/Services';
@@ -10,7 +11,7 @@ const Home = () => {
         <div>
              <Banner></Banner>
             <Services></Services>
-          
+             <SectionOne></SectionOne>
         </div>
     );
 };
