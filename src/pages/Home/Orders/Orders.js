@@ -64,7 +64,7 @@ const Orders = () => {
     }
     return (
         <div>
-            <h1>order data :{orders?.length} </h1>
+        
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4'>
                 {
                     orders?.map(order => <OrdersData 

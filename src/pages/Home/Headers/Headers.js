@@ -12,11 +12,13 @@ const Headers = () => {
     const menuItems=<>
       
       <li><Link to='/'>Home</Link></li>
-       {user?.email?
+       {user?.uid?
        <>
          <li><Link to='/orders'>order</Link></li>
          <button onClick={handleLogOutbtn} className='btn btn-primary'>Loguot</button>
-         
+          
+          <img src={user?.photoURL} alt="" className='w-10 ml-40 rounded-full ' />
+          
        </>
         
         :

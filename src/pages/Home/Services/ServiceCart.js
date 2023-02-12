@@ -9,7 +9,17 @@ const ServiceCart = ({service}) => {
         <figure><img src={image} className='h-60 w-full ' alt="Shoes" /></figure>
         <div className="card-body">
             <h2 className="card-title">{title} </h2>
-            <p>{details} </p>
+            {
+                details.length > 200?
+
+                <p>
+                    {details.slice(0, 100) +"..."} <Link to={`/cartService/${_id}`}>Red more</Link>
+                </p>
+                :
+                <p>
+                    {details}
+                </p>
+            }
             <div className="card-actions justify-end">
             <Link to={`/chackOut/${_id}`}>
             <button className="btn btn-primary">Buy Now</button>

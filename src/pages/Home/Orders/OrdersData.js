@@ -12,11 +12,11 @@ const OrdersData = ({order,handleDelete,handleUpdateStatus}) => {
      
 
     return (
-     <div className="card card-side w-full bg-base-100 shadow-xl ">
+     <div className="card card-side w-full mt-5 bg-base-100 shadow-xl ">
         <figure>
             
             {   oerderService?.image &&
-            <img src={oerderService?.image} alt=""/>}
+            <img className='w-96 h-60' src={oerderService?.image} alt=""/>}
             </figure>
         <div className="card-body">
             <h2 className="card-title">{servicename} </h2>
