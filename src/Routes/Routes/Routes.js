@@ -4,6 +4,7 @@ import CartService from '../../pages/Home/home/cartservices/CartService'
 
 import Home from '../../pages/Home/home/Home'
 import Orders from '../../pages/Home/Orders/Orders'
+import ServiceAll from '../../pages/Home/Services/ServiceAll'
 import ChackOut from '../../pages/shared/ChackOut/ChackOut'
 import SignIn from '../../pages/shared/SignIn/SignIn'
 import SignUp from '../../pages/shared/SignUp/SignUp'
@@ -23,6 +24,10 @@ export const routes=createBrowserRouter([
             {
                 path:'/signin',
                 element: <SignIn></SignIn>
+            },
+            {
+                path:'/seeall',
+                element: <ServiceAll></ServiceAll>
             },
             {
                 path:'/cartService/:id',

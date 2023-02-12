@@ -1,38 +1,37 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ServiceCart from './ServiceCart';
+import ServiceAllCart from './ServiceAllCart';
 
-const Services = () => {
-
+const ServiceAll = () => {
     const [services, setServices]=useState();
     useEffect(()=> {
-         fetch('http://localhost:5000/services')
-         .then(res => res.json())
-         .then(data => {
-          
-           setServices(data)
-        })
-    },[])
+        fetch('http://localhost:5000/servicess')
+        .then(res => res.json())
+        .then(data => {
+           console.log(data);
+          setServices(data)
+       })
+   },[])
     return (
         <div>
-           <div className='text-center mt-5 '>
-           <h1 className='text-3xl font-bold '>Our service</h1>
+            <div className='text-center mt-5'>
+            <h1 className='text-3xl font-bold '>Our service</h1>
            <p className='w-96 text-center m-auto mt-1 mb-4'>Hey friends, this cake service is just for you, you will always get our service and you can see our food in a very good way.</p>
            <div className='lg:m-auto  md:m-auto sm:m-auto '>
-             <Link to='/seeall'><button className='btn btn-primary '>See All</button></Link>
+             <Link to='/'><button className='btn btn-primary '>Backe</button></Link>
              </div>
-           </div>
+            </div>
             <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 mx-5 mt-5'>
-             {
-                services?.map(service => <ServiceCart 
+                {
+                    services?.map(service => <ServiceAllCart
                     key={service._id}
                     service={service}
-                    ></ServiceCart>)
-             }
-             
+                    
+                    ></ServiceAllCart>)
+                }
             </div>
         </div>
     );
 };
 
-export default Services;
+export default ServiceAll;

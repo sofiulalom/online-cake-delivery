@@ -5,6 +5,7 @@ const ServiceCart = ({service}) => {
     const {_id,image, title, details}=service;
     
     return (
+        <div>
         <div className="card card-compact w-76 bg-base-100 shadow-xl">
             
         <figure><img src={image} className='h-60 w-full ' alt="Shoes" /></figure>
@@ -27,6 +28,8 @@ const ServiceCart = ({service}) => {
             </Link>
             </div>
         </div>
+        </div>
+        
         </div>
     );
 };
