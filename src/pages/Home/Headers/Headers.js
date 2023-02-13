@@ -12,9 +12,10 @@ const Headers = () => {
     const menuItems=<>
       
       <li><Link to='/'>Home</Link></li>
+      <li><Link to='/blog'>Blog</Link></li>
        {user?.uid?
        <>
-         <li><Link to='/orders'>order</Link></li>
+         <li><Link to='/orders'>Order</Link></li>
          <button onClick={handleLogOutbtn} className='btn btn-primary'>Loguot</button>
           
           <img src={user?.photoURL} alt="" className='w-10 ml-40 rounded-full '/>
@@ -35,7 +36,7 @@ const Headers = () => {
     
     </>
     return (
-        <div className="navbar bg-base-100 ">
+        <div className="navbar bg-base-100 mb-5">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -46,7 +47,7 @@ const Headers = () => {
       </ul>
     </div>
     <Link to='/' className="btn btn-ghost ml-8  pxy-0">
-      <img src={logo} alt="" className='w-14' />
+      <img src={logo} alt="" className='w-14 rounded-full' />
     </Link>
   </div>
   <div className="navbar-center hidden lg:flex">

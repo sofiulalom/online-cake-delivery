@@ -1,5 +1,6 @@
 import {createBrowserRouter} from 'react-router-dom'
 import Main from '../../LeyOut/Maine/Main'
+import Blog from '../../pages/Home/Blog/Blog'
 import CartService from '../../pages/Home/home/cartservices/CartService'
 
 import Home from '../../pages/Home/home/Home'
@@ -28,6 +29,10 @@ export const routes=createBrowserRouter([
             {
                 path:'/seeall',
                 element: <ServiceAll></ServiceAll>
+            },
+            {
+                path:'/blog',
+                element:<Blog></Blog>,
             },
             {
                 path:'/cartService/:id',
