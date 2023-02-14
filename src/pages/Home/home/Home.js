@@ -9,7 +9,7 @@ import Services from '../Services/Services';
 const Home = () => {
     useTitle('Home')
     return (
-        <div>
+        <div className='bg-black'>
              <Banner></Banner>
              <SectionTow></SectionTow>
              <Services></Services>

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import useTitle from '../../../Title/useTitle';
+
 
 const OrdersData = ({order,handleDelete,handleUpdateStatus}) => {
-    const {_id,servicename, phone, price ,customaraname,email, service,status }=order;
+    const {_id,servicename,message, phone, price ,customaraname,email, service,status }=order;
       const [oerderService, setOrderService]=useState({})
+      useTitle('Order')
       useEffect(()=>{
              fetch(`http://localhost:5000/services/${service}`)
              .then(res => res.json())
@@ -12,7 +15,8 @@ const OrdersData = ({order,handleDelete,handleUpdateStatus}) => {
      
 
     return (
-     <div className="card card-side w-full mt-5 bg-base-100 shadow-xl ">
+        <div>
+     <div className="card card-side w-full mt-5 bg-gray-500 text-gray-100 shadow-xl ml-3">
         <figure>
             
             {   oerderService?.image &&
@@ -24,12 +28,15 @@ const OrdersData = ({order,handleDelete,handleUpdateStatus}) => {
             <p>price {price}</p>
              <p>email:{email} </p>
             <p>Phone: {phone} </p>
+            <p>Review: {message}</p>
              
             <div className="card-actions justify-end">
             <button onClick={()=> handleDelete(_id)} className="btn btn-primary">delete</button>
             <button onClick={()=> handleUpdateStatus(_id)} className="btn btn-ghost">{status ? status :'panding'}</button>
             </div>
         </div>
+        </div>
+        
         </div>
     );
 };

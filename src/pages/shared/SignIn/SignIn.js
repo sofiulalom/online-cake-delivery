@@ -33,9 +33,9 @@ const SignIn = () => {
          })
     }
     return (
-        <div className='mt-5'>
+        <div className=' bg-black '>
         <div className='text-center'>
-        <form onSubmit={handleSignInSubmit} className='bg-white rounded-sm drop-shadow-2xl m-auto w-80 p-8'>
+        <form onSubmit={handleSignInSubmit} className='bg-white rounded-sm mb-5 drop-shadow-2xl m-auto w-80 p-8'>
             <h1 className='text-4xl text-indigo-600 mb-4'>Sign-In</h1>
         <input name='email' type="email" placeholder="Your Email" className="input  input-info w-full max-w-xs mb-3" required/>
         <br />

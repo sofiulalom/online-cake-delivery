@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import {Link} from 'react-router-dom'
 import logo from  '../../../../src/assest/Logo/logo.jpg'
+import { FaUserAlt } from 'react-icons/fa';
 const Headers = () => {
    const {user, LogOut}=useContext(AuthContext);
    const handleLogOutbtn=()=> {
@@ -13,12 +14,24 @@ const Headers = () => {
       
       <li><Link to='/'>Home</Link></li>
       <li><Link to='/blog'>Blog</Link></li>
+
        {user?.uid?
        <>
          <li><Link to='/orders'>Order</Link></li>
-         <button onClick={handleLogOutbtn} className='btn btn-primary'>Loguot</button>
+         <li><Link to='/myreview'>MyReview</Link></li>
+         <button onClick={handleLogOutbtn} className='btn btn-primary mr-32 '>Loguot</button>
           
-          <img src={user?.photoURL} alt="" className='w-10 ml-40 rounded-full '/>
+         {
+        user?.photoURL?
+        <>
+         <img src={user?.photoURL} alt="" className='w-10 h-8 rounded-full sm:mt-2  ' />
+        </>
+        :
+        <>
+          <FaUserAlt></FaUserAlt>
+        </>
+       }
+          
           
        </> 
         
@@ -47,12 +60,13 @@ const Headers = () => {
       </ul>
     </div>
     <Link to='/' className="btn btn-ghost ml-8  pxy-0">
-      <img src={logo} alt="" className='w-14 rounded-full' />
+      <img src={logo} alt="" className='w-10 rounded-full' />
     </Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
     {menuItems}
+     
     </ul>
   </div>
  

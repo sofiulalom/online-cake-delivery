@@ -47,7 +47,7 @@ const ChackOut = () => {
  
     }
     return (
-        <div className='bg-black h-max p-5 border-white'>
+        <div className='bg-black h-max p-5 border-white text-white'>
         <h1 className='text-2xl'>You have order now your choiage</h1>
         <p className='text-3xl ml-3 mb-3'> price: {price}</p>
       <form onSubmit={handelesubmitproduct}>
@@ -62,7 +62,7 @@ const ChackOut = () => {
         <br />
         <textarea name='message' className="textarea textarea-warning w-full max-w-xs mb-3" placeholder="your comment and review" required></textarea>
         <br />
-        <button className="btn btn-outline btn-success w-96">Success</button>
+        <button className="btn btn-outline btn-success w-96">Agre now</button>
         </div>
       </form>
     </div>

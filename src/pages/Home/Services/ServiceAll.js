@@ -14,7 +14,7 @@ const ServiceAll = () => {
    },[])
     return (
         <div>
-            <div className='text-center mt-5'>
+            <div className='text-center mt-5 text-gray-100'>
             <h1 className='text-3xl font-bold '>Our service</h1>
            <p className='w-96 text-center m-auto mt-1 mb-4'>Hey friends, this cake service is just for you, you will always get our service and you can see our food in a very good way.</p>
            <div className='lg:m-auto  md:m-auto sm:m-auto '>

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import img3 from '../../../../src/assest/bannerItems/3.jpg';
 const SectionOne = () => {
     return (
-        <div className="hero mt-5 bg-base-200">
+        <div className="hero mt-5 bg-black text-gray-300">
         <div className="hero-content flex-col lg:flex-row-reverse">
             <img src={img3} alt='' className="max-w-sm rounded-lg shadow-2xl w-86" />
             <div>
