@@ -6,7 +6,7 @@ const Orders = () => {
     const {user, LogOut}=useContext(AuthContext);
     const [orders, setOrders]=useState([])
     useEffect(()=>{
-          fetch(`http://localhost:5000/orders?email=${user?.email}`,{
+          fetch(`https://cake-service-server.vercel.app/orders?email=${user?.email}`,{
             headers:{
                 authorization: `Bearer ${localStorage.getItem('cake-token')}`
             }
@@ -21,7 +21,7 @@ const Orders = () => {
     },[user?.email, LogOut])
 
     const handleDelete=id=>{
-          fetch(`http://localhost:5000/orders/${id}`, {
+          fetch(`https://cake-service-server.vercel.app/orders/${id}`, {
             method:'DELETE',
             headers:{
                 authorization: `Bearer ${localStorage.getItem('cake-token')}`
@@ -41,7 +41,7 @@ const Orders = () => {
     }
 
     const handleUpdateStatus=id=>{
-        fetch(`http://localhost:5000/orders/${id}`,{
+        fetch(`https://cake-service-server.vercel.app/orders/${id}`,{
             method:'PATCH',
             headers:{
                 'content-type': 'application/json',

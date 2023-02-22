@@ -1,8 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../Title/useTitle';
 
 const ServiceAllCart = ({service}) => {
     const {_id,image, title, details}=service;
+     useTitle('seeAll')
     return (
         <div className="card card-compact w-76 bg-gray-500 text-gray-100 shadow-xl">
             

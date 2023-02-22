@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 import { FaUserAlt } from 'react-icons/fa';
-import { Link, useLoaderData } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import useTitle from '../../../Title/useTitle';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import Orders from '../Orders/Orders';
+
 
 
 const ReviewCart = () => {
     const {user}=useContext(AuthContext)
-  
+    useTitle('myReview')
     return (
         <div>
           

@@ -1,8 +1,10 @@
 import React from 'react';
+import useTitle from '../../../Title/useTitle';
 
 
 
 const Blog = () => {
+    useTitle('Blog')
     return (
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3 ml-14 '>
             <div className="card w-96 bg-gray-500 text-gray-100 shadow-xl">

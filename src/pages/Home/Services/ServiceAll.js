@@ -5,7 +5,7 @@ import ServiceAllCart from './ServiceAllCart';
 const ServiceAll = () => {
     const [services, setServices]=useState();
     useEffect(()=> {
-        fetch('http://localhost:5000/servicess')
+        fetch('https://cake-service-server.vercel.app/servicess')
         .then(res => res.json())
         .then(data => {
            console.log(data);

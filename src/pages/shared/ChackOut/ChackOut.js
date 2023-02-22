@@ -27,7 +27,7 @@ const ChackOut = () => {
           message
  
         };
-        fetch('http://localhost:5000/orders', {
+        fetch('https://cake-service-server.vercel.app/orders', {
            method: 'POST',
            headers: {
               'content-type': 'application/json'

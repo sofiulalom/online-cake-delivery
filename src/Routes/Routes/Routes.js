@@ -45,13 +45,13 @@ export const routes=createBrowserRouter([
             {
                 path:'/cartService/:id',
                 element: <CartService></CartService>,
-                loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: ({params}) => fetch(`https://cake-service-server.vercel.app/services/${params.id}`)
 
             },
             {
                path:'/chackOut/:id',
                element: <PrivetRoute><ChackOut></ChackOut></PrivetRoute>,
-               loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+               loader: ({params})=> fetch(`https://cake-service-server.vercel.app/services/${params.id}`)
             },
             {
                 path:'/orders',
